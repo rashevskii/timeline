@@ -1,0 +1,356 @@
+@font-face {
+  font-family: ProximaNovaCond;
+  src: url("font/ProximaNovaCond-Regular.ttf");
+}
+@font-face {
+  font-family: ProximaNovaCondBold;
+  src: url("font/ProximaNovaCond-Bold.ttf");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: ProximaNovaCond, sans-serif;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+.rct-header-root>div:first-child,
+.rct-sidebar,
+.rct-sidebar>div:first-child {
+  width: 100px !important;
+}
+.react-calendar-timeline .rct-calendar-header,
+.react-calendar-timeline .rct-scroll {
+  width: calc(100% - 100px) !important;
+}
+.react-calendar-timeline .rct-header-root {
+  background-color: #8abf00;
+}
+.react-calendar-timeline .rct-dateHeader {
+  font-weight: 600;
+}
+.Modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #464853;
+  z-index: 2003;
+  padding: 15px 0;
+  outline: none;
+  box-shadow: 0 0 7px 2px rgba(0,0,0,.6);
+  padding: 40px 70px 20px 70px;
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2002;
+  background-color: rgba(0,0,0,.4);
+}
+.text {
+  font-size: 18px;
+}
+.button-add {
+  width: 162px;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  z-index: 2001;
+  font-family: ProximaNovaCondBold;
+}
+.login {
+  width: 80px;
+}
+.app-btn {
+  font-size: 17px;
+  height: 44px;
+  color: #fff;
+  background-color: #6098d5;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all .2s;
+  font-family: ProximaNovaCondBold, sans-serif;
+}
+.app-btn:hover {
+  box-shadow: 0px 0px 3px 1px rgba(255,255,255,.4);
+}
+.close-modal-mobile {
+  display: none;
+}
+.date__wrapper {
+  display: flex;
+}
+.time__wrapper {
+  display: flex;
+}
+.input__wrapper {
+  padding-bottom: 15px;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.timeFrom__wrapper input {
+  margin-left: 25px;
+}
+.timeTo__wrapper input {
+  margin-left: 36px;
+}
+form label {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-family: ProximaNovaCondBold, sans-serif;
+}
+form input {
+  width: 142px;
+  height: 42px;
+  font-size: 26px;
+  color: #000;
+}
+.close__btn {
+  margin-right: 15px;
+}
+.header__wrapper {
+  position: relative;
+  width: 100%;
+  height: 78px;
+  background: #464853;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 230px 0 30px;
+  box-sizing: border-box;
+}
+.login__wrapper {
+  padding-right: 27px;
+  border-right: 1px solid rgba(255,255,255,.2);
+  display: flex;
+}
+.admin-enter {
+  color: #fff;
+  margin-right: 15px;
+}
+.login-name {
+  font-size: 17px;
+  color: #fff;
+  font-family: ProximaNovaCond, sans-serif;
+  margin: 0;
+}
+.calendar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 300px;
+  max-width: 300px;
+  font-family: ProximaNovaCond, sans-serif;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.calendar::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 1px;
+  background-color: rgba(255,255,255,.3);
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 0;
+}
+.calendar-header_button {
+  cursor: pointer;
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid #e4e7ea;
+  transition: border 0.1s ease-in, color 0.1s ease-in;
+  position: relative;
+  height: 35px;
+  width: 35px;
+  outline: none;
+}
+.calendar-month_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.calendar-header_button.is-prev:before {
+  content: '<';
+  color: #fff;  
+}
+.calendar-header_button.is-next:before {
+  content: '>';
+  color: #fff;
+}
+.calendar-days_of_week {
+  font-size: 13px;
+  display: flex;
+  color: #c3c3c3;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #fff;
+}
+.calendar-days_of_week_day {
+  flex-basis: 15%;
+}
+.calendar-week {
+  display: flex;
+}
+.calendar-week-day {
+  height: 40px;
+  width: 40px;
+  vertical-align: middle;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 15%;
+  background: transparent;
+  color: #fff;
+  position: relative;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  outline: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.is-today {
+  background: #fff;
+  color: #464853;
+}
+.is-prev_month {
+  opacity: .5;
+}
+.is-prev_month:hover {
+  opacity: 1;
+}
+.calendar-week-day:hover {
+  color: #d4cb48;
+  border: 1px solid #d4cb48;
+}
+.is-selected {
+  background-color: #8abf00;
+  color: #fff;
+}
+.is-selected:hover {
+  color: #fff;
+}
+.button__wrapper .app-btn {
+  font-size: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 20px;
+}
+.confirm {
+  font-size: 10px;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 20px;
+}
+.btn-close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #464853;
+  transform: rotate(45deg);
+  font-size: 34px;
+  line-height: 34px;
+  transition: all 0.2s;
+}
+.btn-close-modal:hover {
+  box-shadow: 0 0 8px 2px rgba(0,0,0,.5);
+}
+@media screen and (max-width: 768px) {
+  .header__wrapper img {
+    width: 150px;
+    margin-right: 15px;
+  }
+  .login__wrapper {
+    flex-direction: column;
+  }
+  .button-add {
+    width: 130px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .Modal {
+    top: 20px;
+    padding-top: 12px;
+  }
+  .calendar {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  .confirm {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .header__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    padding-right: 99px;
+  }
+  .login__wrapper {
+    border-right: none;
+  }
+  .button-add {
+    top: 7px;
+    right: 20px;
+  }
+}
+@media screen and (max-width: 410px) {
+  .button__wrapper {
+    display: flex;
+    width: 285px;
+    justify-content: space-between;
+  }
+  .btn-close-modal {
+    display: none;
+  }
+  .close-modal-mobile {
+    display: block;
+  }
+}
+@media screen and (max-height: 580px) {
+  .calendar-month_header {
+    margin-bottom: 0;
+  }
+  .calendar-days_of_week {
+    margin-bottom: 0;
+  }
+  .input__wrapper {
+    padding-bottom: 5px;
+  }
+  .button__wrapper .app-btn {
+    margin-top: 0;
+  }
+}
